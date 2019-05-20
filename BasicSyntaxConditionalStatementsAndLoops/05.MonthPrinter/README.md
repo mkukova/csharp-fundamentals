@@ -1,0 +1,25 @@
+﻿# 1.Lab: Intro and Basic Syntax
+
+
+1. 5.Month Printer
+
+Write a program, which takes an **integer** from the console and prints the corresponding **month**. If the number **is more than 12** or **less than 1** print &quot; **Error!**&quot;.
+
+### Input
+
+You will receive a **single**** integer **on a** single line**.
+
+### Output
+
+If the number is within the boundaries print the corresponding month, otherwise print &quot; **Error!**&quot;.
+
+### Examples
+
+| **Input** | **Output** |   | **Input** | **Output** |
+| --- | --- | --- | --- | --- |
+| 2 | February |   | 13 | Error! |
+
+### Solution
+
+
+
