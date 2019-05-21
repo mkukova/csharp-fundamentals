@@ -6,7 +6,17 @@ namespace _04.PrintAndSum
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			int startNumber = int.Parse(Console.ReadLine());
+			int finalNumber = int.Parse(Console.ReadLine());
+			int sum = 0;
+			for (int i = startNumber; i <= finalNumber; i++)
+			{
+				Console.Write($"{i} ");
+				sum += i;
+			}
+
+			Console.WriteLine();
+			Console.WriteLine($"Sum: {sum}");
 		}
 	}
 }
