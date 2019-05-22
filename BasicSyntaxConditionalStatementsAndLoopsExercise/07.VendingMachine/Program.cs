@@ -10,10 +10,10 @@ namespace _07.VendingMachine
 			double deposit = 0;
 			double bill = 0;
 			double price = 0;
-			while(command!="Start")
+			while (command != "Start")
 			{
 				double coin = double.Parse(command);
-				switch(coin)
+				switch (coin)
 				{
 					case 0.1:
 						deposit += coin;
@@ -39,23 +39,28 @@ namespace _07.VendingMachine
 			}
 
 			command = Console.ReadLine().ToLower();
-			while(command!="end")
+			while (command != "end")
 			{
-				switch(command)
+				switch (command)
 				{
 					case "nuts":
+						price = 2.0;
 						bill += 2.0;
 						break;
 					case "water":
 						bill += 0.7;
+						price = 0.7;
 						break;
 					case "crisps":
+						price = 1.5;
 						bill += 1.5;
 						break;
 					case "soda":
+						price = 0.8;
 						bill += 0.8;
 						break;
 					case "coke":
+						price = 1.0;
 						bill += 1.0;
 						break;
 					default:
@@ -63,19 +68,20 @@ namespace _07.VendingMachine
 						break;
 				}
 
-				if(deposit<bill)
+				if (bill > deposit)
 				{
-					Console.WriteLine("Sorry, not enough money");				
+					Console.WriteLine("Sorry, not enough money");
+					bill -= price;
 				}
-				else
+				else if (bill > 0)
 				{
-					Console.WriteLine($"Purchased {command}");				
+					Console.WriteLine($"Purchased {command}");
 				}
 
 				command = Console.ReadLine().ToLower();
 			}
 
-			Console.WriteLine($"Change: {Math.Abs(deposit-bill):F2}");
+			Console.WriteLine($"Change: {Math.Abs(deposit - bill):F2}");
 		}
 	}
 }
