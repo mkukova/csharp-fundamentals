@@ -6,7 +6,10 @@ namespace _07.ConcatNames
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			string firstName = Console.ReadLine();
+			string secondName = Console.ReadLine();
+			string character = Console.ReadLine();
+			Console.WriteLine($"{firstName}{character}{secondName}");
 		}
 	}
 }
