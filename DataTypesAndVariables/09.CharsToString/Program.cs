@@ -6,7 +6,11 @@ namespace _09.CharsToString
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			string character1 = Console.ReadLine();
+			string character2 = Console.ReadLine();
+			string character3 = Console.ReadLine();
+			string character = character1 + character2 + character3;
+			Console.WriteLine(character);
 		}
 	}
 }
