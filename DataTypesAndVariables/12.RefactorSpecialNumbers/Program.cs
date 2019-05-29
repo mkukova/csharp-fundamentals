@@ -6,7 +6,22 @@ namespace _12.RefactorSpecialNumbers
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			int counter = int.Parse(Console.ReadLine());
+			int sum = 0;
+			int number = 0;
+			for (int i = 1; i <= counter; i++)
+			{
+				number = i;
+				while (number > 0)
+				{
+					sum += number % 10;
+					number = number / 10;
+				}
+
+				bool isSpecial = (sum == 5) || (sum == 7) || (sum == 11);
+				Console.WriteLine($"{i} -> {isSpecial}");
+				sum = 0;
+			}
 		}
 	}
 }
