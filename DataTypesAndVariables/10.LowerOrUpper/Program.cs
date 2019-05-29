@@ -6,7 +6,16 @@ namespace _10.LowerOrUpper
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			char character = char.Parse(Console.ReadLine());
+			bool isUpper = char.IsUpper(character);
+			if (isUpper)
+			{
+				Console.WriteLine("upper-case");
+			}
+			else
+			{
+				Console.WriteLine("lower-case");
+			}
 		}
 	}
 }
