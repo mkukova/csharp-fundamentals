@@ -6,7 +6,9 @@ namespace _01.ConvertMetersToKilometers
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			int distanceInMeters = int.Parse(Console.ReadLine());
+			double distanceInKilometers = distanceInMeters / 1000.00;
+			Console.WriteLine($"{distanceInKilometers:F2}");
 		}
 	}
 }
