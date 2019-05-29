@@ -8,10 +8,9 @@ namespace _12.RefactorSpecialNumbers
 		{
 			int counter = int.Parse(Console.ReadLine());
 			int sum = 0;
-			int number = 0;
 			for (int i = 1; i <= counter; i++)
 			{
-				number = i;
+				int number = i;
 				while (number > 0)
 				{
 					sum += number % 10;
