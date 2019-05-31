@@ -6,7 +6,20 @@ namespace _06.TriplesOfLatinLetters
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			int numberLetters = int.Parse(Console.ReadLine());
+			for (int i = 0; i < numberLetters; i++)
+			{
+				for (int j = 0; j < numberLetters; j++)
+				{
+					for (int k = 0; k < numberLetters; k++)
+					{
+						char firstChar = (char)('a' + i);
+						char secondChar = (char)('a' + j);
+						char thirdChar = (char)('a' + k);
+						Console.WriteLine($"{firstChar}{secondChar}{thirdChar}");
+					}
+				}
+			}
 		}
 	}
 }
