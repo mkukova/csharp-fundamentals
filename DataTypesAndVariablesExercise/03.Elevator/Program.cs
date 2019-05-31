@@ -6,7 +6,10 @@ namespace _03.Elevator
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			int numberPeople = int.Parse(Console.ReadLine());
+			int capacity = int.Parse(Console.ReadLine());
+			int courses = (int)Math.Ceiling((double)numberPeople / capacity);
+			Console.WriteLine(courses);
 		}
 	}
 }
