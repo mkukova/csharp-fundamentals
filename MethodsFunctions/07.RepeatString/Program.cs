@@ -6,7 +6,21 @@ namespace _07.RepeatString
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			string strings = Console.ReadLine();
+			int count = int.Parse(Console.ReadLine());
+			Console.WriteLine(RepeatString(strings, count));
+		}
+
+		static string RepeatString(string a, int count)
+		{
+			string result = "";
+
+			for (int i = 0; i < count; i++)
+			{
+				result += a;
+			}
+
+			return result;
 		}
 	}
 }
