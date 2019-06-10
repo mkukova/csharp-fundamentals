@@ -28,7 +28,7 @@ namespace _02.Grades
 			{
 				Console.WriteLine("Very good");
 			}
-			else 
+			else
 			{
 				Console.WriteLine("Excellent");
 			}
