@@ -6,7 +6,15 @@ namespace _04.SumOfChars
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			int numberOfLines = int.Parse(Console.ReadLine());
+			int sum = 0;
+			for (int i = 0; i < numberOfLines; i++)
+			{
+				char letter = char.Parse(Console.ReadLine());
+				sum += (int)letter;
+			}
+
+			Console.WriteLine($"The sum equals: {sum}");
 		}
 	}
 }
