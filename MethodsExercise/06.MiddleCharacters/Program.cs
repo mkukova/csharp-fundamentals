@@ -6,7 +6,21 @@ namespace _06.MiddleCharacters
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			string text = Console.ReadLine();
+			MiddleCharacter(text);
+		}
+
+		static void MiddleCharacter(string a)
+		{
+			int stringLenght = a.Length;
+			if (stringLenght % 2 == 0)
+			{
+				Console.WriteLine($"{a[(stringLenght / 2) - 1]}{a[stringLenght / 2]}");
+			}
+			else
+			{
+				Console.WriteLine(a[(stringLenght / 2)]);
+			}
 		}
 	}
 }
