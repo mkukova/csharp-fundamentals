@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace _04.ReverseArrayOfStrings
 {
@@ -6,7 +7,11 @@ namespace _04.ReverseArrayOfStrings
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			string[] items = Console.ReadLine().Split(' ').ToArray();
+			for (int i = items.Length - 1; i >= 0; i--)
+			{
+				Console.Write($"{items[i]} ");
+			}
 		}
 	}
 }
