@@ -6,7 +6,17 @@ namespace _01.Train
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			int countOfWagons = int.Parse(Console.ReadLine());
+			int[] train = new int[countOfWagons];
+			int sum = 0;
+			for (int i = 0; i < countOfWagons; i++)
+			{
+				train[i] = int.Parse(Console.ReadLine());
+				sum += train[i];
+			}
+
+			Console.WriteLine(string.Join(" ", train));
+			Console.WriteLine(sum);
 		}
 	}
 }
