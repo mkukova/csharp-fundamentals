@@ -6,7 +6,9 @@ namespace _02.PoundsToDollars
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			double pound = double.Parse(Console.ReadLine());
+			double dollars = pound * 1.31;
+			Console.WriteLine($"{dollars:F3}");
 		}
 	}
 }
