@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace _04.TextFilter
 {
@@ -6,7 +7,15 @@ namespace _04.TextFilter
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			string[] banWords = Console.ReadLine().Split(", ");
+			string text = Console.ReadLine();
+
+			foreach (var banWord in banWords)
+			{
+				text = text.Replace(banWord, new string('*', banWord.Length));
+			}
+
+			Console.WriteLine(text);
 		}
 	}
 }
