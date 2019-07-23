@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace _01.ReverseStrings
 {
@@ -6,7 +8,19 @@ namespace _01.ReverseStrings
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			string input = Console.ReadLine();
+
+			while (input != "end")
+			{
+				var reversed = "";
+				for (int i = input.Length-1; i >=0; i--)
+				{
+					reversed += input[i];
+				}
+
+				Console.WriteLine($"{input} = {reversed}");
+				input = Console.ReadLine();
+			}
 		}
 	}
 }
