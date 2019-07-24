@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Text;
 
 namespace _07.StringExplosion
 {
@@ -6,7 +8,27 @@ namespace _07.StringExplosion
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			string input = Console.ReadLine();
+			string[] splittedInput = input.Split(">");
+			string result = splittedInput[0];
+			int remainingPower = 0;
+
+			for (int i = 1; i < splittedInput.Length; i++)
+			{
+				result += ">";
+				int power = int.Parse(splittedInput[i][0].ToString()) + remainingPower;
+
+				if (power > splittedInput[i].Length)
+				{
+					remainingPower = power - splittedInput[i].Length;
+				}
+				else
+				{
+					result += splittedInput[i].Substring(power);
+				}
+			}
+
+			Console.WriteLine(result);
 		}
 	}
 }
