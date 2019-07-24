@@ -9,7 +9,7 @@ namespace _06.ReplaceRepeatingChars
 		static void Main(string[] args)
 		{
 			string input = Console.ReadLine().ToString();
-			var result = new StringBuilder();
+			string result = string.Empty;
 
 			if (input == string.Empty)
 			{
@@ -17,35 +17,30 @@ namespace _06.ReplaceRepeatingChars
 				return;
 			}
 
-			int inputLenght = input.Length-1;
+			int inputLenght = input.Length - 1;
 
-			if (inputLenght==0)
+			if (inputLenght == 0)
 			{
 				Console.WriteLine(input);
 				return;
 			}
 
-			for (int i = 0; i < inputLenght - 1; i++)
+			for (int i = 0; i < inputLenght; i++)
 			{
 				char symbol = input[i];
 
 				if (symbol != input[i + 1])
 				{
-					result.Append(symbol);
-
-					if ((i + 1) == (inputLenght - 1))
-					{
-						result.Append(input[i + 1]);
-					}
+					result += symbol;
 				}
 			}
 
-			if (input[inputLenght] != input[inputLenght - 1])
+			if (input[inputLenght - 1] != input[inputLenght - 2])
 			{
-				result.Append(input[inputLenght]);
+				result += input[inputLenght];
 			}
 
-			Console.WriteLine(result.ToString());
+			Console.WriteLine(result);
 		}
 	}
 }
