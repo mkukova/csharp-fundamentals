@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Text;
 
 namespace _08.LettersChangeNumbers
 {
@@ -6,7 +8,40 @@ namespace _08.LettersChangeNumbers
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			string input = Console.ReadLine();
+			string[] splittedInput = input
+				.Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+			double totalSum = 0;
+
+			for (int i = 0; i < splittedInput.Length; i++)
+			{
+				string currentInput = splittedInput[i];
+				char firstLetter = currentInput[0];
+				char lastLetter = currentInput[currentInput.Length - 1];
+				double digit = double.Parse(currentInput.Substring(1, currentInput.Length - 2));
+
+				if (char.IsUpper(firstLetter))
+				{
+					digit /= firstLetter - 'A' + 1;
+				}
+				else
+				{
+					digit *= firstLetter - 'a' + 1;
+				}
+
+				if (char.IsUpper(lastLetter))
+				{
+					digit -= lastLetter - 'A' + 1;
+				}
+				else
+				{
+					digit += lastLetter - 'a' + 1;
+				}
+
+				totalSum += digit;
+			}
+
+			Console.WriteLine($"{totalSum:F2}");
 		}
 	}
 }
