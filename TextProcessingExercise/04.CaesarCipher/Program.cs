@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text;
+using System.Linq;
 
 namespace _04.CaesarCipher
 {
@@ -6,7 +8,16 @@ namespace _04.CaesarCipher
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			string input = Console.ReadLine();
+			var result = new StringBuilder();
+
+			for (int i = 0; i < input.Length; i++)
+			{
+				var symbol = (int)input[i] + 3;
+				result.Append((char)symbol);
+			}
+
+			Console.WriteLine(result.ToString());
 		}
 	}
 }
