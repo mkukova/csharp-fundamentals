@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Text;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace _06.ReplaceRepeatingChars
@@ -8,39 +8,18 @@ namespace _06.ReplaceRepeatingChars
 	{
 		static void Main(string[] args)
 		{
-			string input = Console.ReadLine().ToString();
-			string result = string.Empty;
-
-			if (input == string.Empty)
+			char[] input = Console.ReadLine().ToCharArray();
+			List<char> result = new List<char>();
+			result.Add(input[0]);
+			foreach (var symbol in input)
 			{
-				Console.WriteLine(" ");
-				return;
-			}
-
-			int inputLenght = input.Length - 1;
-
-			if (inputLenght == 0)
-			{
-				Console.WriteLine(input);
-				return;
-			}
-
-			for (int i = 0; i < inputLenght; i++)
-			{
-				char symbol = input[i];
-
-				if (symbol != input[i + 1])
+				if (symbol != result.Last())
 				{
-					result += symbol;
+					result.Add(symbol);
 				}
 			}
 
-			if (input[inputLenght - 1] != input[inputLenght - 2])
-			{
-				result += input[inputLenght];
-			}
-
-			Console.WriteLine(result);
+			Console.WriteLine(string.Join(string.Empty, result));
 		}
 	}
 }
